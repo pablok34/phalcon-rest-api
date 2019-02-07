@@ -31,7 +31,7 @@ class PhonesController extends ControllerBase
             array_merge($filtersConditions, $findSettings)
         );
         $total = PhoneBooks::count($filtersConditions);
-
+        $findSettings['total'] = $total;
 
         $this->_response['statusCode'] = 200;
         $this->_response['status'] = 'success';
